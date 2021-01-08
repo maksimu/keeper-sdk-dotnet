@@ -29,7 +29,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Google.Protobuf" Version="3.14.0" />
+    <PackageReference Include="Google.Protobuf" Version="3.11.4" />
     <PackageReference Include="Portable.BouncyCastle" Version="1.8.8" />
   </ItemGroup>
 
