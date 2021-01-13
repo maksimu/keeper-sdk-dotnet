@@ -50,7 +50,7 @@
         - `VaultCommands.ps1`
    
 4. Generate and upload config.json file
-      - Using .NET Commander login with the account to be used to login programmatically. Config file was generated under `~/.keeper` folder
+      - Using .NET Commander login with the account to be used to login programmatically. Config file was generated under `~/.keeper` folder<br />
         _Note: Download latest .NET Commander from [HERE](https://github.com/Keeper-Security/keeper-sdk-dotnet/releases) and execute `Commander.exe` in Command Prompt._
       - Enable persistent login by running:
         1. `this-device register`
