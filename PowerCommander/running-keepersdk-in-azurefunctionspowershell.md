@@ -25,8 +25,7 @@
    
 3. Upload module
 
-    - Open "Kudu" by going to the Azure function that was just created -> Advanced Tools -> "Go ->"
-    - "Debug Console" -> "PowerShell"
+    - Open "Kudu" by going to the Azure function that was just created -> Advanced Tools -> "Go ->" -> "Debug Console" (Top navigation) -> "PowerShell"
     - Navigate to `site/wwwroot/[FUNC NAME]`
     - Create new folder: `modules`
     - Upload SDK related files
