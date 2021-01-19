@@ -1,5 +1,6 @@
 
 1. Create new Azure Function App
+
     - Azure Portal -> `Function App` -> `+ Add`<br /></br>
   
     - Resource Group: [Select]
@@ -12,7 +13,7 @@
     - Storage account: [Select]
     - OS: Windows (the only option)
     - Plan type: Consumption (Serverless)<br /></br>
-  
+    
     - Enable Application Insights: Yes
     - Application Insights: [Select]
    
@@ -55,7 +56,7 @@
       - Enable persistent login by running:
         1. `this-device register`
         2. `this-device persistent_login on`
-        3. `this-device ip_disable_auto_approve on`
+        3. `this-device timeout 0` - _If the session is idle for more than the session_logout_timer then it will be logged out.  Default value for commander is 2 days. 0 = disabled (will use client type default), 1 - 525600 (365 days), value is in minutes. i.e. 1 = 1 minute._
       - Upload config.json file to Azure function by opening Kudu, navigating to `site/wwwroot/` and creating folder `.keeper` and then upload file there
    
 5. Add/Modify code to the Function.
