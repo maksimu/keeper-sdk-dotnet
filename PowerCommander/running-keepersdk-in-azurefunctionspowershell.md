@@ -85,3 +85,45 @@
     # Retrieve records
     $records = kr
     ```
+  
+  6. Configure Azure
+  Configure Azure function to execute one request at a time  
+  
+  A. Edit `host.json` (under `C:\home\site\wwwroot`) to include `extensions.http` and `singleton` sections as shown in the example below.
+  
+  Example of the `host.json` file:
+  
+  ```
+  {
+   "version":"2.0",
+   "managedDependency":{
+      "Enabled":true
+   },
+   "extensionBundle":{
+      "id":"Microsoft.Azure.Functions.ExtensionBundle",
+      "version":"[1.*, 2.0.0)"
+   },
+   "extensions":{
+      "http":{
+         "routePrefix":"api",
+         "maxOutstandingRequests":10,
+         "maxConcurrentRequests":1,
+         "dynamicThrottlesEnabled":true
+      }
+   },
+   "singleton":{
+      "lockPeriod":"00:00:55",
+      "listenerLockPeriod":"00:01:00",
+      "listenerLockRecoveryPollingInterval":"00:01:00",
+      "lockAcquisitionTimeout":"00:01:00",
+      "lockAcquisitionPollingInterval":"00:00:03"
+   }
+}
+```
+
+B. Add [Your Function] -> Settings -> Configuration -> "Application settings" tab -> Click "+ New application setting"
+    
+- Name: `WEBSITE_MAX_DYNAMIC_APPLICATION_SCALE_OUT`
+- Value: `1`
+
+C. Restart Azure Function
