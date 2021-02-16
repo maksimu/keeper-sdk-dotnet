@@ -86,8 +86,8 @@
     $records = kr
     ```
   
-  6. Configure Azure
-  Configure Azure function to execute one request at a time  
+6. Configure Azure
+Configure Azure function to execute one request at a time  
   
   A. Edit `host.json` (under `C:\home\site\wwwroot`) to include `extensions.http` and `singleton` sections as shown in the example below.
   
